@@ -9,18 +9,18 @@ Here, Lets take A as the source and G as the destination. In its populated routi
 
 Several cases arise when considering optimality with respect to congestion:
 
-###I] Rate of Outflux of intermediate node is the same as Source
+### I] Rate of Outflux of intermediate node is the same as Source
 
 In such a case, as A sends the first packet to node D, D will forward the same to its neighbor G, which happens to be the destination as well. In the mean time, A would have sent the second packet to D, whcih D can now attend to. The process repeats. So, the as D is transmitting 'l'th (l < n) packet to G, A is transmittin the (l+1) packet to D. If such a smooth flow of packets persists throughout the transmission, we have no problems whatsoever. However, such networks are too ideal!
 
 ![Figure 2](/images/network_optimal.png)
 
-###II] Rate of Outflux of intermediate node is less than the Source Node
+### II] Rate of Outflux of intermediate node is less than the Source Node
 
 In this case, A can transmit information at a faster rate than D. But to adhire to the principle of optimality, A MUST transmit all its packets to D. A knows for a fact that 'It is illogical for me to send the packets along any other path because I know for a fact that the best way to reach G is through D'. It would only be a matter of time that the buffers in D are filled. Due to congestion in the network, subsequent packets are lost.
 
 
-###III] Rate of Outflux of intermediate node is more than the Source Node
+### III] Rate of Outflux of intermediate node is more than the Source Node
 
 There may occur a time where problems in A make it slower than node D. D can handle the load and transmit all packets successfully. But D isnt being used to its limits.
 
@@ -42,9 +42,9 @@ At time T1, Node B will send the first Packet in its Queue (packet 1) to D. C wi
 
 
 At time `TJ`(for some `Jth` iteration), 
-* Node A deploys the next set of packets to all of its nodes
-* Each node will send queued packets to nodes along least recently used link.
-* Each node will, in the mean time recieve packets from other intermediate nodes, which are queued.
+- Node A deploys the next set of packets to all of its nodes
+- Each node will send queued packets to nodes along least recently used link.
+- Each node will, in the mean time recieve packets from other intermediate nodes, which are queued.
 
 ![Figure 5](/images/network_t2_t3.png)
 
@@ -53,10 +53,10 @@ But you may wonder, if node G (destination) is adjacent to node D, then why send
 Above, we didnt specify the size of the input buffer for each node. This minimum should be the maximum number of packets that can enter into it in a fixed interval of time `t = [T(i) - T(i-1)]`
 
 
-##Netowrk Breaks down
+## Netowrk Breaks down
 Say a Link breaks in the middle of transmission. The effect of breaking down could depend on the topology and exactly which node broke down. Two types of effects node breakdowns can cause - 
 
-###1. Individual Breakdown 
+### 1. Individual Breakdown 
 - Here, only the node that breaks down is avoided.
 - Say node E has broken down in middle of transmission. E has 2 input links CE and DE and 2 output links,EF and EG.
 - When immediate nodes C and D get to know that E has broken down, They will NOT route their packets to E. 
@@ -73,9 +73,9 @@ Say a Link breaks in the middle of transmission. The effect of breaking down cou
 
 ![Figure 6](/images/individual_breakdown.png)
 
-###2. Chained Breakdown
+### 2. Chained Breakdown
 
-*Nodes immediately adjacent to it cannot be routed to despite the fact that they are working!
+- Nodes immediately adjacent to it cannot be routed to despite the fact that they are working!
 
 - In the network shown, lets assume that node H breaks down. 
 
